@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="customer">
+    <select id="getAll" resultType="Customer">
+        select * from customer
+    </select>
+    <select id="getbypage" resultType="Customer" parameterType="StartAndEnd">
+        SELECT * FROM customer WHERE customer_id limit #{start},#{end};
+    </select>
+
+    <select id="getcount" resultType="int">
+        SELECT COUNT(*) from customer
+    </select>
+
+    <delete id="deletecustomer" parameterType="int">
+        DELETE FROM customer WHERE customer_id=#{id}
+    </delete>
+
+    <insert id="addcustomer" parameterType="Customer">
+        INSERT INTO customer(store_id,first_name,last_name,email,address_id,create_date) VALUES (1,#{first_name},#{last_name},#{email},#{address_id},#{create_date});
+    </insert>
+
+    <select id="getAcustomer" resultType="Customer" parameterType="int">
+        SELECT * FROM customer WHERE customer_id=#{id}
+    </select>
+
+    <update id="updatecustomer" parameterType="Customer">
+        UPDATE customer set first_name=#{first_name},last_name=#{last_name},email=#{email} WHERE customer_id=#{customer_id}
+    </update>
+
+    <select id="login" parameterType="String" resultType="int">
+        SELECT count(*) FROM customer WHERE first_name=#{name}
+    </select>
+</mapper>
