@@ -24,7 +24,7 @@
         <div class="panel panel-default">
             <div class="panel-heading" data-toggle="collapse"
                  data-parent="#accordion2" href="#collapseOne">
-                <a class="accordion-toggle">Customer管理</a>
+                <a class="accordion-toggle" href="customer_index.jsp" target="right">Customer管理</a>
             </div>
             <div id="collapseOne" class="panel-collapse collapse"
                  style="height: 0px;">

@@ -3,11 +3,12 @@ package com.hand.controller;
 import com.hand.bean.Customer;
 import com.hand.bean.StartAndEnd;
 import com.hand.service.CustomerService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.tags.Param;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -60,7 +61,7 @@ public class CustomerController {
         customer.setCreate_date(new Date());
         System.out.println(customer);
         customerService.insert(customer);
-        return "customer_index";
+        return "redirect:main/customer_index.jsp";
     }
 
     @RequestMapping("/getACustomer")
@@ -83,7 +84,7 @@ public class CustomerController {
         Integer count = customerService.login(firstName);
         System.out.println(firstName);
         System.out.println(count);
-        if(count==1){
+        if(count!=0){
             map.put("code","3");
             map.put("href","main/index.jsp");
             session.setAttribute("firstname",firstName);

@@ -58,7 +58,7 @@
         <div class="panel panel-default">
             <div class="panel-heading"><strong>基本信息</strong></div>
             <div class="panel-body">
-                <form  method="post" action="main/addaddress" name="f">
+                <form  method="post" action="addaddress" name="f">
                     <div class="form-group">
                         <label>First_Name:</label><span class="import">*</span>
                         <input type="text" id="first" class="form-control" name="first_name" >
@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group">
                         <label>Address</label><span class="import">*</span>
-                        <select name="address" class="form-control">
+                        <select name="address_id" class="form-control">
                            <c:forEach items="${address}" var="add">
                                <option value="${add.address_id}">${add.address}</option>
                            </c:forEach>

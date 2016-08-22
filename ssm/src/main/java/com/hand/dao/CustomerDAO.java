@@ -3,6 +3,7 @@ package com.hand.dao;
 import com.hand.bean.Address;
 import com.hand.bean.Customer;
 import com.hand.bean.StartAndEnd;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 

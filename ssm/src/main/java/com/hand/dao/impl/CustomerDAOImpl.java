@@ -48,7 +48,7 @@ public class CustomerDAOImpl implements CustomerDAO{
     }
 
     public Integer addCustomer(Customer customer) {
-        return sqlSessionTemplate.insert("customer.addcustomer");
+        return sqlSessionTemplate.insert("customer.addcustomer", customer);
     }
 
     public Customer getACustomer(int id) {

@@ -18,8 +18,8 @@
 <frameset rows="9%,*" noresize="noresize" border="0">
     <frame src="top.jsp" >
     <frameset cols="15%,*">
-        <frame src="left.jsp">
-        <frame src="customer_index.jsp">
+        <frame src="left.jsp" target="right">
+        <frame src="customer_index.jsp" name="right">
     </frameset>
 </frameset>
 </html>
